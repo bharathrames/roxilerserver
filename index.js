@@ -6,10 +6,10 @@ const app = express();
 const port = process.env.PORT;
 // app.use(cors({
 //   // origin:"http://localhost:3000"
-//   origin:"https://transactionsdashboard.netlify.app/"
+//   origin:"https://roxilerdashboard.netlify.app/"
 // }))
 
-const allowedOrigins = ['http://localhost:3000'];
+const allowedOrigins = ['https://roxilerdashboard.netlify.app/'];
 app.use(cors({
   origin: function (origin, callback) {
     if (allowedOrigins.includes(origin)) {
