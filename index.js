@@ -96,7 +96,6 @@ app.get('/statistics', async (req, res) => {
     ]);
     const totalSoldItems = await Product.countDocuments({ ...dateQuery, sold: true });
     const totalNotSoldItems = await Product.countDocuments({ ...dateQuery, sold: false });
-
     res.json({
       totalSaleAmount: totalSaleAmount[0] ? totalSaleAmount[0].totalAmount : 0,
       totalSoldItems,
@@ -143,7 +142,6 @@ app.get('/barchart', async (req, res) => {
         },
       },
     ]);
-
     res.json(result);
   } catch (error) {
     console.error('Error fetching bar chart data:', error.message);
@@ -180,7 +178,6 @@ app.get('/pie-chart', async (req, res) => {
         },
       },
     ]);
-
     res.json(pieChartData);
   } catch (error) {
     console.error('Error fetching pie chart data:', error.message);
